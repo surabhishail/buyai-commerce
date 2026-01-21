@@ -3,7 +3,6 @@
 > AI agent built on Universal Commerce Protocol - One API for AI to transact with any merchant
 
 [![YC S26](https://img.shields.io/badge/YC-Spring%202026-orange)](https://www.ycombinator.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🎯 Vision
 
@@ -114,6 +113,7 @@ npm run dev
 - [API Design](./docs/API_DESIGN.md)
 - [Tech Stack](./docs/TECH_STACK.md)
 - [Development Guide](./docs/DEVELOPMENT_GUIDE.md)
+- [DailyProgress Report](./PROGRESS_LOG.md)
 
 ## 🎯 Roadmap
 
