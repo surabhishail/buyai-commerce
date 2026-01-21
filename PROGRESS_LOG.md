@@ -60,6 +60,12 @@ Communication Flow:
 - Created `packages/gateway/src/adapters/base.ts` - Adapter interface
 - Setup `package.json` for monorepo
 
+**What Each File Does:**
+- `index.ts`: Main server, listens on port 3000, handles HTTP requests
+- `types/index.ts`: Defines UCPProduct, UCPOrder (our standard format)
+- `adapters/base.ts`: Interface that forces all merchants to implement same methods
+
+
 **Test Results:**
 ```bash
 # Server startup
