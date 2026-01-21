@@ -10,6 +10,42 @@
 
 **Goal:** Setup Gateway Service Foundation
 
+**What is the Gateway? (Simple Explanation)**
+```
+The Gateway is the "traffic cop" of our system. It sits in the middle and:
+
+1. RECEIVES requests from AI Agent
+   ("Hey, search for protein powder")
+
+2. TRANSLATES and ROUTES to the right merchant
+   (Shopify, Amazon, etc.)
+
+3. NORMALIZES responses back to standard format
+   (So AI always gets data in same structure)
+
+Think of it like a universal translator:
+- AI speaks "UCP language" → Gateway understands
+- Gateway speaks "Shopify language" → Shopify understands
+- Gateway translates Shopify response back to UCP → AI understands
+
+Communication Flow:
+┌─────────────┐
+│  AI Agent   │ "Search products"
+└──────┬──────┘
+       │ HTTP POST /api/search
+       ↓
+┌──────────────┐
+│   GATEWAY    │ ← WE BUILT THIS TODAY
+│  (Express)   │ Validates, routes, normalizes
+└──────┬───────┘
+       │ Calls adapter.searchProducts()
+       ↓
+┌──────────────┐
+│   Shopify    │ ← NEXT: Build adapter
+│   Adapter    │ Translates UCP ↔ Shopify API
+└──────────────┘
+```
+
 **What I Did:**
 1. ✅ Created project structure with monorepo setup
 2. ✅ Installed dependencies (Express, TypeScript, etc.)
@@ -58,11 +94,6 @@ $ curl http://localhost:3000/api
 
 **Blockers:**
 - None
-
-**Learnings:**
-- Monorepo structure helps organize multiple packages
-- TypeScript interfaces ensure type safety across adapters
-- Express middleware setup is straightforward
 
 **Tomorrow's Plan:**
 - [ ] Setup Shopify development store
